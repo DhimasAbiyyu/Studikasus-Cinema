@@ -11,14 +11,14 @@ public class CustomerModel implements ModelInterface {
         CustomerEntityArrayList = new ArrayList<CustomerEntity>();
     }
 
-    public void insert(CustomerEntity pembeliEntity) {
-        CustomerEntityArrayList.add(pembeliEntity);
+    public void insert(CustomerEntity customerEntity) {
+        CustomerEntityArrayList.add(customerEntity);
     }
     @Override
     public void view() {
-        for (CustomerEntity pembeliEntity : CustomerEntityArrayList) {
+        for (CustomerEntity customerEntity : CustomerEntityArrayList) {
             System.out.println("==============================================");
-            System.out.println("nama : "+ pembeliEntity.getNama()+ "\nPassword : "+ pembeliEntity.getPassword()+"\n No Telp : "+pembeliEntity.getEmail());
+            System.out.println("nama : "+ customerEntity.getNama()+ "\nPassword : "+ customerEntity.getPassword()+"\n No Telp : "+ customerEntity.getEmail());
             System.out.println("==============================================");
         }
     }
@@ -31,7 +31,7 @@ public class CustomerModel implements ModelInterface {
         }
         return loop;
     }
-    public CustomerEntity getPembeliEntityArrayList(int index) {
+    public CustomerEntity getCustomerEntityArrayList(int index) {
         return CustomerEntityArrayList.get(index);
     }
 

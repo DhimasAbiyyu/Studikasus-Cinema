@@ -23,7 +23,7 @@ public class GUI {
         TampilanAwal.getContentPane().setBackground(Color.LIGHT_GRAY);
 
         top = new JLabel("DRAKORNESIA.COM");
-        top.setBounds(100, 10, 600, 50);
+        top.setBounds(120, 10, 600, 50);
         top.setFont(new Font("Times New Roman", Font.BOLD, 40));
         TampilanAwal.add(top);
 
@@ -64,7 +64,7 @@ public class GUI {
         TampilanAwal.add(check);
 
         update = new JButton("UPDATE");
-        update.setBounds(260, 320, 100, 40);
+        update.setBounds(270, 370, 100, 40);
         update.setBackground(Color.WHITE);
         TampilanAwal.add(update);
 
@@ -129,9 +129,9 @@ public class GUI {
             public void actionPerformed(ActionEvent ae) {
                 if (ceklogin == true) {
                     try {
-                        AllObjctrl.penjual.dataPenjual();
+                        AllObjctrl.penjual.dataAdmin();
                         AllObjctrl.penjual.login(textnamalogin.getText(), passwordlogin.getText());
-                        String nama = AllObjctrl.penjual.penjualEntity().getNama();
+                        String nama = AllObjctrl.penjual.adminEntity().getNama();
                         JOptionPane.showMessageDialog(null, "Selamat datang " + nama, "information", JOptionPane.INFORMATION_MESSAGE);
                         AdminGUI penj = new AdminGUI();
                         TampilanAwal.dispose();
@@ -144,7 +144,7 @@ public class GUI {
                     try {
 
                         AllObjctrl.pembeli.login(textnamalogin.getText(), passwordlogin.getText());
-                        String nama = AllObjctrl.pembeli.pembeliEntity().getNama();
+                        String nama = AllObjctrl.pembeli.customerEntity().getNama();
                         JOptionPane.showMessageDialog(null, "Selamat datang " + nama, "information", JOptionPane.INFORMATION_MESSAGE);
                         CustomerGUI pemb = new CustomerGUI();
                         TampilanAwal.dispose();

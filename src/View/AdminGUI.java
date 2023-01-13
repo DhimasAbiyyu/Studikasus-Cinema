@@ -28,7 +28,7 @@ public class AdminGUI {
         admin.add(Penjual);
 
         scrollpenjual.setBounds(30,100,570,200);
-        tabelcustomer.setModel(pembeli.daftarpembeli());
+        tabelcustomer.setModel(pembeli.daftarcustomer());
         admin.add(scrollpenjual);
 
         namalabel = new JLabel("Nama");
@@ -81,8 +81,8 @@ public class AdminGUI {
                 String nama = namatext.getText();
                 String password = passtext.getText();
                 int index = AllObjectModel.daftar.cekData(nama, password);
-                AllObjctrl.penjual.updateIsVerified(index,AllObjctrl.pembeli.showDaftarPembeli(index).getIndexFilm(),AllObjctrl.pembeli.showDaftarPembeli(index).getPembeli());
-                tabelcustomer.setModel(pembeli.daftarpembeli());
+                AllObjctrl.penjual.updateIsVerified(index,AllObjctrl.pembeli.showDaftarPembeli(index).getIndexFilm(),AllObjctrl.pembeli.showDaftarPembeli(index).getCustomer());
+                tabelcustomer.setModel(pembeli.daftarcustomer());
             }
 
         });
@@ -92,7 +92,7 @@ public class AdminGUI {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 AllObjctrl.pembeli.deleteDatapembeli(0);
-                tabelcustomer.setModel(pembeli.daftarpembeli());
+                tabelcustomer.setModel(pembeli.daftarcustomer());
             }
 
         });
@@ -100,8 +100,8 @@ public class AdminGUI {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int i = tabelcustomer.getSelectedRow();
-                namatext.setText(AllObjctrl.pembeli.daftarpembeli().getValueAt(i, 0).toString());
-                passtext.setText(AllObjctrl.pembeli.daftarpembeli().getValueAt(i, 1).toString());
+                namatext.setText(AllObjctrl.pembeli.daftarcustomer().getValueAt(i, 0).toString());
+                passtext.setText(AllObjctrl.pembeli.daftarcustomer().getValueAt(i, 1).toString());
             }
         });
     }

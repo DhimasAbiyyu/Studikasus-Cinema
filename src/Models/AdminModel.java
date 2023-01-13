@@ -8,22 +8,22 @@ public class AdminModel implements ModelInterface{
     public AdminModel() {
         CustomerEntityArrayList = new ArrayList<AdminEntity>();
     }
-    public void inserPenjual(AdminEntity penjual) {
-        CustomerEntityArrayList.add(penjual);
+    public void insertAdmin(AdminEntity admin) {
+        CustomerEntityArrayList.add(admin);
     }
     public void view() {
-        for (AdminEntity penjualEntity : CustomerEntityArrayList) {
-            System.out.println(penjualEntity.getNama());
-            System.out.println(penjualEntity.getPassword());
-            System.out.println(penjualEntity.getBios());
+        for (AdminEntity adminEntity : CustomerEntityArrayList) {
+            System.out.println(adminEntity.getNama());
+            System.out.println(adminEntity.getPassword());
+            System.out.println(adminEntity.getBios());
         }
     }
 
     @Override
     public int cekData(String nama, String password) {
         int loop = 0;
-        for (AdminEntity penjualEntity : CustomerEntityArrayList) {
-            if (penjualEntity.getNama().equals(nama) && penjualEntity.getPassword().equals(password)) {
+        for (AdminEntity AdminEntity : CustomerEntityArrayList) {
+            if (AdminEntity.getNama().equals(nama) && AdminEntity.getPassword().equals(password)) {
                 break;
             } else {
                 loop++;
@@ -31,7 +31,7 @@ public class AdminModel implements ModelInterface{
         }
         return loop;
     }
-    public AdminEntity showDataPenjual(int index) {
+    public AdminEntity showDataAdmin(int index) {
         return CustomerEntityArrayList.get(index);
     }
 

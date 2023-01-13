@@ -14,7 +14,7 @@ public class CustomerGUI {
     JTextArea area = new JTextArea();
     JLabel datadiri, daftarFilm;
     JComboBox pilFilm = new JComboBox(FilmEntity.film);
-    int cek = AllObjctrl.pembeli.cekDaftarPembeli(AllObjctrl.pembeli.getData().getNama());
+    int cek = AllObjctrl.pembeli.cekDaftarCustomer(AllObjctrl.pembeli.getData().getNama());
 
     public CustomerGUI() {
         customer.setSize(720, 600);
@@ -37,7 +37,6 @@ public class CustomerGUI {
 
         daftarbtn = new JButton("konfirmasi");
         daftarbtn.setBounds(500, 200, 120, 30);
-        daftarbtn.setFont(new Font("Times New Roman", Font.BOLD, 25));
         daftarbtn.setBackground(Color.WHITE);
         customer.add(daftarbtn);
 
@@ -56,7 +55,7 @@ public class CustomerGUI {
         } else if (cek == -2) {
             JOptionPane.showMessageDialog(null, "Pilih Film Yang ingin Ditonton", "Information", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            area.setText(datapembeli());
+            area.setText(datacustomer());
         }
         daftarbtn.addActionListener(new ActionListener() {
 
@@ -64,7 +63,7 @@ public class CustomerGUI {
             public void actionPerformed(ActionEvent ae) {
                 int indexfilm = pilFilm.getSelectedIndex();
                 AllObjctrl.pembeli.daftarfilm(indexfilm, AllObjctrl.pembeli.getData(), false);
-                area.setText(datapembeli());
+                area.setText(datacustomer());
             }
 
         });
@@ -79,16 +78,16 @@ public class CustomerGUI {
         });
     }
 
-    String datapembeli() {
-        int cek = AllObjctrl.pembeli.cekDaftarPembeli(AllObjctrl.pembeli.getData().getNama());
+    String datacustomer() {
+        int cek = AllObjctrl.pembeli.cekDaftarCustomer(AllObjctrl.pembeli.getData().getNama());
         String cekverif;
         if (AllObjctrl.pembeli.showDaftarPembeli(cek).isIsVerified() == false) {
-            cekverif = "belum di verifikasi";
+            cekverif = "Unverifed";
         } else {
-            cekverif = "Sudah di verifikasi";
+            cekverif = "Verifed";
         }
-        String text = "Nama = " + AllObjctrl.pembeli.showDaftarPembeli(cek).getPembeli().getNama() + "\n"
-                + "Email = " + AllObjctrl.pembeli.showDaftarPembeli(cek).getPembeli().getEmail() + "\n"
+        String text = "Nama = " + AllObjctrl.pembeli.showDaftarPembeli(cek).getCustomer().getNama() + "\n"
+                + "Email = " + AllObjctrl.pembeli.showDaftarPembeli(cek).getCustomer().getEmail() + "\n"
                 + "Verifikasi = " + cekverif + "\n"
                 + "Film = " + FilmEntity.film[AllObjctrl.pembeli.showDaftarPembeli(cek).getIndexFilm()];
         return text;

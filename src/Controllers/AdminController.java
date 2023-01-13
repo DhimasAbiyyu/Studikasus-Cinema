@@ -9,31 +9,31 @@ public class AdminController implements ControllerInterface {
     public AdminController() {
     }
 
-    public void dataPenjual() {
-        String namaAdmin[] = {"Dhimas","Rakha","Safir"};
-        String passwordAdmin[] = {"dhimas","rakha","safir"};
+    public void dataAdmin() {
+        String namaAdmin[] = {"Dhimas","Rakha","Saffir"};
+        String passwordAdmin[] = {"dhimas","rakha","saffir"};
 
 
         for (int i=0; i<namaAdmin.length;i++) {
-            AllObjectModel.penjual.inserPenjual(new AdminEntity(namaAdmin[i], passwordAdmin[i]));
+            AllObjectModel.admin.insertAdmin(new AdminEntity(namaAdmin[i], passwordAdmin[i]));
         }
     }
-    public void viewpenjual() {
-        AllObjectModel.penjual.view();
+    public void viewadmin() {
+        AllObjectModel.admin.view();
     }
 
 
     @Override
     public void login(String nama, String password) {
-        indexLogin = AllObjectModel.penjual.cekData(nama, password);
+        indexLogin = AllObjectModel.admin.cekData(nama, password);
     }
 
-    public AdminEntity penjualEntity() {
-        return AllObjectModel.penjual.showDataPenjual(indexLogin);
+    public AdminEntity adminEntity() {
+        return AllObjectModel.admin.showDataAdmin(indexLogin);
     }
 
-    public void updateIsVerified(int index, int indexBaju, CustomerEntity pembeliEntity) {
-        AllObjectModel.daftar.updateIsVerified(index, new DaftarCustomerEntity(pembeliEntity, true, indexBaju));
+    public void updateIsVerified(int index, int indexFilm, CustomerEntity customerEntity) {
+        AllObjectModel.daftar.updateIsVerified(index, new DaftarCustomerEntity(customerEntity, true, indexFilm));
     }
 
     public ArrayList<DaftarCustomerEntity> cekDaftarModel() {

@@ -5,17 +5,17 @@ public class DaftarCustomerEntity {
     private boolean isVerified;
     private int indexFilm;
 
-    public DaftarCustomerEntity(CustomerEntity pembeli, boolean isVerified, int indexFilm) {
-        this.customer = pembeli;
+    public DaftarCustomerEntity(CustomerEntity customer, boolean isVerified, int indexFilm) {
+        this.customer = customer;
         this.isVerified = isVerified;
         this.indexFilm = indexFilm;
     }
 
-    public CustomerEntity getPembeli() {
+    public CustomerEntity getCustomer() {
         return customer;
     }
 
-    public void setPembeli(CustomerEntity pembeli) {
+    public void setCustomer(CustomerEntity pembeli) {
         this.customer = pembeli;
     }
 

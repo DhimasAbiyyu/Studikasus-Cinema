@@ -24,7 +24,7 @@ public class DaftarModel implements ModelInterface {
     public void view() {
         for (DaftarCustomerEntity daftar : daftarArrayList) {
             System.out.println("==============================================");
-            System.out.println("nama : " + daftar.getPembeli().getNama()+"\nPassword : " + daftar.getPembeli().getPassword() + "\nNo telp : "+daftar.getPembeli().getEmail()+"\n Film : "+FilmEntity.film[daftar.getIndexFilm()] + "\n isVerified : ");
+            System.out.println("nama : " + daftar.getCustomer().getNama()+"\nPassword : " + daftar.getCustomer().getPassword() + "\nNo telp : "+daftar.getCustomer().getEmail()+"\n Film : "+FilmEntity.film[daftar.getIndexFilm()] + "\n isVerified : ");
             if(daftar.isIsVerified()==false) {
                 System.out.println("Belum Di Verifikasi Penjual");
             } else {
@@ -40,7 +40,7 @@ public class DaftarModel implements ModelInterface {
             loop = -1;
         } else {
             for (int i=0; i<daftarArrayList.size(); i++) {
-                if (daftarArrayList.get(i).getPembeli().getNama().equals(nama)) {
+                if (daftarArrayList.get(i).getCustomer().getNama().equals(nama)) {
                     loop = i;
                     break;
                 } else {
@@ -51,24 +51,24 @@ public class DaftarModel implements ModelInterface {
         return loop;
     }
 
-    public DaftarCustomerEntity showDaftarPembeli(int index) {
+    public DaftarCustomerEntity showDaftarCustomer(int index) {
         return daftarArrayList.get(index);
     }
-    public void updateIsVerified(int index, DaftarCustomerEntity DaftarPembeli) {
-        daftarArrayList.set(index, DaftarPembeli);
+    public void updateIsVerified(int index, DaftarCustomerEntity DaftarCustomer) {
+        daftarArrayList.set(index, DaftarCustomer);
     }
-    public void hapuspembeliModel(int index) {
+    public void hapuscustomerModel(int index) {
         daftarArrayList.remove(daftarArrayList.get(index));
     }
 
-    public ArrayList <DaftarCustomerEntity> alldatapembeli() {
+    public ArrayList <DaftarCustomerEntity> alldatacustomer() {
         return daftarArrayList;
     }
 
     private int cariFilm(String Film){
         int index=-1;
         for(int i=0;i <daftarArrayList.size();i++) {
-            if(Film.equals(daftarArrayList.get(i).getPembeli().getNama()))
+            if(Film.equals(daftarArrayList.get(i).getCustomer().getNama()))
                 index=i;
         }
         return index;
