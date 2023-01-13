@@ -35,7 +35,7 @@ public class CustomerGUI {
         pilFilm.setBounds(450, 90, 230, 30);
         customer.add(pilFilm);
 
-        daftarbtn = new JButton("Daftar");
+        daftarbtn = new JButton("konfirmasi");
         daftarbtn.setBounds(500, 200, 120, 30);
         daftarbtn.setFont(new Font("Times New Roman", Font.BOLD, 25));
         daftarbtn.setBackground(Color.WHITE);
@@ -52,9 +52,9 @@ public class CustomerGUI {
         customer.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         if (cek == -1) {
-            JOptionPane.showMessageDialog(null, "Anda Belum Daftar Film", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Pilih Film Yang ingin Ditonton", "Information", JOptionPane.INFORMATION_MESSAGE);
         } else if (cek == -2) {
-            JOptionPane.showMessageDialog(null, "Anda Belum Daftar Film", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Pilih Film Yang ingin Ditonton", "Information", JOptionPane.INFORMATION_MESSAGE);
         } else {
             area.setText(datapembeli());
         }

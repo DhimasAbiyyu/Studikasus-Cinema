@@ -1,22 +1,22 @@
 package Entity;
 
 public class DaftarCustomerEntity {
-    private CustomerEntity pembeli;
+    private CustomerEntity customer;
     private boolean isVerified;
     private int indexFilm;
 
     public DaftarCustomerEntity(CustomerEntity pembeli, boolean isVerified, int indexFilm) {
-        this.pembeli = pembeli;
+        this.customer = pembeli;
         this.isVerified = isVerified;
         this.indexFilm = indexFilm;
     }
 
     public CustomerEntity getPembeli() {
-        return pembeli;
+        return customer;
     }
 
     public void setPembeli(CustomerEntity pembeli) {
-        this.pembeli = pembeli;
+        this.customer = pembeli;
     }
 
     public boolean isIsVerified() {

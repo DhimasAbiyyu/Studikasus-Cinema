@@ -64,38 +64,38 @@ public class GUI {
         TampilanAwal.add(check);
 
         update = new JButton("UPDATE");
-        update.setBounds(260, 350, 100, 40);
+        update.setBounds(260, 320, 100, 40);
         update.setBackground(Color.WHITE);
         TampilanAwal.add(update);
 
-        daftar = new JLabel("Daftar");
+        daftar = new JLabel("Registrasi");
         daftar.setFont(new Font("Times New Roman", Font.BOLD, 30));
-        daftar.setBounds(460, 50, 150, 100);
+        daftar.setBounds(430, 50, 150, 100);
         TampilanAwal.add(daftar);
 
         labelnamadaftar = new JLabel("Nama");
-        labelnamadaftar.setBounds(400, 150, 50, 30);
+        labelnamadaftar.setBounds(400, 120, 50, 30);
         TampilanAwal.add(labelnamadaftar);
         textnamadaftar = new JTextField();
-        textnamadaftar.setBounds(400, 180, 200, 30);
+        textnamadaftar.setBounds(400, 150, 200, 30);
         TampilanAwal.add(textnamadaftar);
 
         labelpassworddaftar = new JLabel("Password");
-        labelpassworddaftar.setBounds(400, 210, 100, 30);
+        labelpassworddaftar.setBounds(400, 180, 100, 30);
         TampilanAwal.add(labelpassworddaftar);
         passworddaftar = new JPasswordField();
-        passworddaftar.setBounds(400, 240, 200, 30);
+        passworddaftar.setBounds(400, 210, 200, 30);
         TampilanAwal.add(passworddaftar);
 
         labelemail = new JLabel("Email");
-        labelemail.setBounds(400, 270, 100, 30);
+        labelemail.setBounds(400, 240, 100, 30);
         TampilanAwal.add(labelemail);
         textnotelp = new JTextField();
-        textnotelp.setBounds(400, 300, 200, 30);
+        textnotelp.setBounds(400, 270, 200, 30);
         TampilanAwal.add(textnotelp);
 
         reg = new JButton("Daftar");
-        reg.setBounds(460, 350, 100, 40);
+        reg.setBounds(460, 320, 100, 40);
         reg.setBackground(Color.WHITE);
 
         TampilanAwal.add(reg);
@@ -122,7 +122,6 @@ public class GUI {
                     ceklogin = false;
                 }
             }
-
         });
         check.addActionListener(new ActionListener() {
 
@@ -175,9 +174,9 @@ public class GUI {
                 try {
                     String nama = textnamadaftar.getText();
                     String pass = passworddaftar.getText();
-                    String notelp = textnotelp.getText();
+                    String email = textnotelp.getText();
 
-                    AllObjctrl.pembeli.insert(nama, pass, notelp);
+                    AllObjctrl.pembeli.insert(nama, pass, email);
                     JOptionPane.showMessageDialog(null, "Registrasi sukses", "information", JOptionPane.INFORMATION_MESSAGE);
                     kosong();
                 } catch (Exception exception) {

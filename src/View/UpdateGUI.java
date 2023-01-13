@@ -20,12 +20,12 @@ public class UpdateGUI {
         TampilanAwal.setLayout(null);
         TampilanAwal.getContentPane().setBackground(Color.LIGHT_GRAY);
 
-        update = new JLabel("Update Data");
+        update = new JLabel("Update Film");
         update.setFont(new Font("Times New Roman",Font.BOLD,43));
         update.setBounds(240,30,300,80);
         TampilanAwal.add(update);
 
-        labelFilmUpdate = new JLabel("Nama Pembeli");
+        labelFilmUpdate = new JLabel("Nama Customer");
         labelFilmUpdate.setBounds(300,180,150,30);
         TampilanAwal.add(labelFilmUpdate);
 
@@ -41,8 +41,8 @@ public class UpdateGUI {
         konfirmasi.setBackground(Color.WHITE);
         TampilanAwal.add(konfirmasi);
 
-        kembali = new JButton("KEMBALI");
-        kembali.setBounds(290,380,120,40);
+        kembali = new JButton("Back");
+        kembali.setBounds(480,450,100,40);
         kembali.setBackground(Color.WHITE);
         TampilanAwal.add(kembali);
 
@@ -56,7 +56,7 @@ public class UpdateGUI {
             public void actionPerformed(ActionEvent ae) {
                 int FilmUpdate = pilFilm.getSelectedIndex();
                 AllObjctrl.pembeli.update(textFilmUpdate.getText(), FilmUpdate);
-                JOptionPane.showMessageDialog(null,"PILIHAN FILM BERHASIL DI UPDATE","INFORMATION",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"FILM BERHASIL DI UPDATE","INFORMATION",JOptionPane.INFORMATION_MESSAGE);
                 kosong();
             }
 
